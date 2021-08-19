@@ -1,0 +1,5 @@
+NSQConfig:
+  Host: 192.168.88.22
+  Port: 4150
+  Topic: rime_index
+  ConsumerChannel: delete_list
