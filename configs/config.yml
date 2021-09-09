@@ -3,3 +3,12 @@ NSQConfig:
   Port: 4150
   Topic: rime_index
   ConsumerChannel: delete_list
+
+MysqlConfig:
+  RecruitmentDatapackMySQLConfig:
+    Host: 192.168.88.121
+    Port: 33306
+    User: dp_rct_user
+    Password: 3948gmH*jppr@SY7d
+    DBName: datapack_recruitment
+    LogMode: none

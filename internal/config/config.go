@@ -1,9 +1,14 @@
 package config
 
-import cfg "gitlab.mvalley.com/adam/common/pkg/config"
+import cfg "gitlab.mvalley.com/datapack/cain/pkg/config"
 
 type ConfigType struct {
-	NSQConfig NSQConfiguration
+	NSQConfig   NSQConfiguration
+	MysqlConfig MysqlConfiguration
+}
+
+type MysqlConfiguration struct {
+	RecruitmentDatapackMySQLConfig cfg.MySQLConfiguration
 }
 
 type NSQConfiguration struct {
@@ -13,14 +18,14 @@ type NSQConfiguration struct {
 	ConsumerChannel string
 }
 
-var c *ConfigType
+var Config *ConfigType
 
 // InitConfig ...
 func InitConfig(configName string, configPaths []string) error {
-	c = new(ConfigType)
-	return cfg.InitConfiguration(configName, configPaths, c)
+	Config = new(ConfigType)
+	return cfg.InitConfiguration(configName, configPaths, Config)
 }
 
 func GetConfig() ConfigType {
-	return *c
+	return *Config
 }
